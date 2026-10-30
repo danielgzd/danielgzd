@@ -1,0 +1,14 @@
+{
+  "featured": ["DeviceMapping", "Cloudflare-SpeedTest-BestIP", "Cloudflare-SpeedTest-BestIP-For-iStoreOS", "MyAutoScript", "proxy-rules"],
+  "descriptions": {"DeviceMapping": "iOS 设备名称查询：远端更新、离线兜底，让机型适配更轻松。", "Cloudflare-SpeedTest-BestIP": "Cloudflare IP 测速与优选工具。", "Cloudflare-SpeedTest-BestIP-For-iStoreOS": "面向 iStoreOS 场景的 Cloudflare IP 优选项目。", "MyAutoScript": "把重复操作交给自动化脚本。", "proxy-rules": "整理跨客户端的网络分流规则与配置。"},
+  "overrides": {"DeviceMapping":"Apple 生态与效率工具", "LumaCapture":"Apple 生态与效率工具", "MarkdownTextTool":"Apple 生态与效率工具", "danielgzd.github.io":"Web 与交互创作", "GNotion":"其他探索", "LocalMind":"其他探索", "idea":"其他探索", "claw-code":"AI 与开发工具"},
+  "categories": [
+    {"name":"自动化与日常脚本", "keywords":["checkin", "check-in", "signin", "sign-", "签到", "myactions", "my-actions", "myautoscript", "jd", "抢购"]},
+    {"name":"网络与自托管", "keywords":["cloudflare", "clash", "proxy", "quantumult", "xray", "v2ray", "v2ex", "qv2ray", "surgio", "potatso", "edgetunnel", "bpb-worker", "ibmvps", "profiles4limbo", "ios_rule"]},
+    {"name":"Apple 生态与效率工具", "keywords":["swift", "ios", "mac", "alfred", "youdaotranslator"]},
+    {"name":"AI 与开发工具", "keywords":["gpt", "pandora", "workbuddy", "idea-activate", "kms"]},
+    {"name":"影音与数字生活", "keywords":["music", "listen1", "tiktok", "yye", "直播", "baidu", "cicada", "server"]},
+    {"name":"学习与知识收藏", "keywords":["book", "gopl", "software-designer", "面试", "教程"]},
+    {"name":"Web 与交互创作", "keywords":["paint", "vue", "github-chinese"]}
+  ]
+}

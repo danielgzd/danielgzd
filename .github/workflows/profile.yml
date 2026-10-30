@@ -1,0 +1,46 @@
+name: 每日更新个人主页
+on:
+  schedule:
+    - cron: '23 0 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['tests/**', 'scripts/**', 'profile.json', '.github/workflows/profile.yml']
+permissions:
+  contents: write
+concurrency:
+  group: profile-update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: 验证分类与流量归档规则
+        run: python -m unittest discover -s tests -v
+      - name: 生成公开项目与贡献统计
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/update_profile.py
+      - name: 归档官方访问数据（可选只读凭据）
+        env:
+          GH_TOKEN: ${{ secrets.PROFILE_ANALYTICS_TOKEN }}
+        run: |
+          if [ -n "$GH_TOKEN" ]; then
+            python scripts/collect_traffic.py
+          else
+            echo '未配置跨仓库只读权限，保留上次访问数据及其采集时间。'
+          fi
+      - name: 保存生成结果
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md docs/PROJECTS.md docs/INTERESTS.md docs/TRAFFIC.md assets data
+          if ! git diff --cached --quiet; then
+            git commit -m '更新公开项目分类与个人统计快照'
+            git push
+          fi
