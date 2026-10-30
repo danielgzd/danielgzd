@@ -110,47 +110,5 @@
         "github-chinese"
       ]
     }
-  ],
-  "private_projects": [
-    {
-      "name": "LumaCapture-Commercial",
-      "description": "面向 macOS 的截图、录屏与标注应用商业版本。",
-      "category": "Apple 生态与效率工具"
-    },
-    {
-      "name": "MarkdownTextToolPro",
-      "description": "Swift 项目，功能介绍待补充。",
-      "category": "Apple 生态与效率工具"
-    },
-    {
-      "name": "MyDocBackup",
-      "description": "个人文档备份项目，仅展示维护活动。",
-      "category": "学习与知识收藏"
-    },
-    {
-      "name": "Notes",
-      "description": "个人笔记项目，仅展示维护活动。",
-      "category": "学习与知识收藏"
-    },
-    {
-      "name": "Rules",
-      "description": "网络规则整理项目。",
-      "category": "网络与自托管"
-    },
-    {
-      "name": "SoundSync",
-      "description": "Swift 项目，功能介绍待补充。",
-      "category": "其他探索"
-    },
-    {
-      "name": "StardustPost",
-      "description": "自主部署的即时通讯系统，采用本地优先与单二进制部署方式。",
-      "category": "网络与自托管"
-    },
-    {
-      "name": "TranslateBox",
-      "description": "离线优先的个人翻译与实时字幕工具，面向 iOS、iPadOS 与 watchOS。",
-      "category": "Apple 生态与效率工具"
-    }
   ]
 }

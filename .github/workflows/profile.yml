@@ -25,11 +25,12 @@ jobs:
       - name: 刷新私有项目的脱敏更新记录（可选只读凭据）
         env:
           GH_TOKEN: ${{ secrets.PRIVATE_PROJECTS_READ_TOKEN }}
+          PRIVATE_PROJECTS_CONFIG_JSON: ${{ secrets.PRIVATE_PROJECTS_CONFIG_JSON }}
         run: |
-          if [ -n "$GH_TOKEN" ]; then
+          if [ -n "$GH_TOKEN" ] && [ -n "$PRIVATE_PROJECTS_CONFIG_JSON" ]; then
             python scripts/update_private_projects.py
           else
-            echo '未配置私有项目只读权限，保留最后一次完整的脱敏项目快照。'
+            echo '未配置私有项目只读权限或私密映射，保留匿名快照。'
           fi
       - name: 生成公开项目与贡献统计
         env:

@@ -30,16 +30,16 @@
 
 | 项目与更新记录 | 基本介绍 |
 | --- | --- |
-| [LumaCapture-Commercial](docs/private-projects/LumaCapture-Commercial.md) | 面向 macOS 的截图、录屏与标注应用商业版本。 |
-| [MarkdownTextToolPro](docs/private-projects/MarkdownTextToolPro.md) | Swift 项目，功能介绍待补充。 |
-| [MyDocBackup](docs/private-projects/MyDocBackup.md) | 个人文档备份项目，仅展示维护活动。 |
-| [Notes](docs/private-projects/Notes.md) | 个人笔记项目，仅展示维护活动。 |
-| [Rules](docs/private-projects/Rules.md) | 网络规则整理项目。 |
-| [SoundSync](docs/private-projects/SoundSync.md) | Swift 项目，功能介绍待补充。 |
-| [StardustPost](docs/private-projects/StardustPost.md) | 自主部署的即时通讯系统，采用本地优先与单二进制部署方式。 |
-| [TranslateBox](docs/private-projects/TranslateBox.md) | 离线优先的个人翻译与实时字幕工具，面向 iOS、iPadOS 与 watchOS。 |
+| [私有项目 01](docs/private-projects/private-b82c81f568e5.md) | 持续维护中的私有项目，仅展示概括信息与月度开发活动。 |
+| [私有项目 02](docs/private-projects/private-963e861caca1.md) | 持续维护中的私有项目，仅展示概括信息与月度开发活动。 |
+| [私有项目 03](docs/private-projects/private-ad3a7aaaed02.md) | 持续维护中的私有项目，仅展示概括信息与月度开发活动。 |
+| [私有项目 04](docs/private-projects/private-37b2ccbcfbc4.md) | 持续维护中的私有项目，仅展示概括信息与月度开发活动。 |
+| [私有项目 05](docs/private-projects/private-58e21b40ac0b.md) | 持续维护中的私有项目，仅展示概括信息与月度开发活动。 |
+| [私有项目 06](docs/private-projects/private-e871c48a8c65.md) | 持续维护中的私有项目，仅展示概括信息与月度开发活动。 |
+| [私有项目 07](docs/private-projects/private-5a44814cbe54.md) | 持续维护中的私有项目，仅展示概括信息与月度开发活动。 |
+| [私有项目 08](docs/private-projects/private-0a0e626a2662.md) | 持续维护中的私有项目，仅展示概括信息与月度开发活动。 |
 
-私有项目快照：2026-10-30T03:34:56+00:00 · [查看完整统计与更新记录](docs/PRIVATE_PROJECTS.md)
+私有项目快照月份：2026-10 · [查看完整统计与更新记录](docs/PRIVATE_PROJECTS.md)
 
 ## 项目与开发足迹
 
@@ -93,6 +93,6 @@
 
 ---
 
-<sub>公开数据更新于 2026-10-30 11:37 UTC+8 · 每日自动整理 · MIT License</sub>
+<sub>公开数据更新于 2026-10-30 11:43 UTC+8 · 每日自动整理 · MIT License</sub>
 
-<sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布已配置的基本介绍与按日提交次数，源码保持私有。</sub>
+<sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布匿名概括信息与月度活动，源码保持私有。</sub>

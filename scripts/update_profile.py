@@ -55,6 +55,9 @@ def render(snapshot, config):
             groups[category(repo, config)].append(repo)
     private_path = ROOT / 'data/private-projects.json'
     private_snapshot = json.loads(private_path.read_text()) if private_path.exists() else None
+    if private_snapshot:
+        from update_private_projects import validate_snapshot
+        validate_snapshot(private_snapshot)
     private_projects = private_snapshot['projects'] if private_snapshot else []
     c = snapshot.get('contributions')
     lines = ['<div align="center">', '',
@@ -76,8 +79,8 @@ def render(snapshot, config):
     if private_snapshot:
         lines += ['', '## 幕后也在生长的作品', '', '有些项目仍在打磨，有些服务于个人工作流。这里保留它们的开发足迹，代码继续私有。', '', '| 项目与更新记录 | 基本介绍 |', '| --- | --- |']
         for project in private_projects:
-            lines += [f"| [{clean(project['name'])}](docs/private-projects/{project['name']}.md) | {clean(project['description'])} |"]
-        lines += ['', f"私有项目快照：{private_snapshot['updated_at']} · [查看完整统计与更新记录](docs/PRIVATE_PROJECTS.md)"]
+            lines += [f"| [{clean(project['name'])}](docs/private-projects/{project['id']}.md) | {clean(project['description'])} |"]
+        lines += ['', f"私有项目快照月份：{private_snapshot['updated_month']} · [查看完整统计与更新记录](docs/PRIVATE_PROJECTS.md)"]
     lines += ['', '## 项目与开发足迹', '', '| 指标 | 当前快照 |', '| :--- | ---: |',
         f'| 公开仓库（包含本首页） | {len(repos)} |', f'| 公开自有非 Fork 项目（不含首页） | {len(own)} |',
         f'| Fork 探索仓库 | {len(forks)} |', f"| 公开自有项目获得 Star | {sum(r['stargazers_count'] for r in own)} |",
@@ -107,7 +110,7 @@ def render(snapshot, config):
     for r in sorted(own, key=lambda r: r['pushed_at'] or '', reverse=True)[:5]:
         lines += [f"- [{r['name']}]({r['html_url']}) · {str(r['pushed_at'])[:10]} · {clean(r['language'])}"]
     lines += ['', '---', '', f"<sub>公开数据更新于 {snapshot['updated_at']} · 每日自动整理 · MIT License</sub>", '',
-        '<sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布已配置的基本介绍与按日提交次数，源码保持私有。</sub>', '']
+        '<sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布匿名概括信息与月度活动，源码保持私有。</sub>', '']
     (ROOT / 'README.md').write_text('\n'.join(lines))
     catalog = ['# 项目地图', '', '私有项目的基本介绍与更新记录见 [非公开项目目录](PRIVATE_PROJECTS.md)。以下按用途分类，保留全部公开仓库。自有非 Fork 仅指仓库属性，不等同于独立原创认证。分类可在 `profile.json` 修正。', '']
     for group, items in groups.items():
@@ -129,9 +132,9 @@ def render(snapshot, config):
         interests += ['## 私有项目补充证据', '', '以下仅使用本人允许展示的项目方向与主语言，不读取源码、提交标题或笔记内容。', '', '| 方向 | 私有项目数 | 项目 |', '| --- | ---: | --- |']
         for group in dict.fromkeys(p['category'] for p in private_projects):
             entries = [p for p in private_projects if p['category'] == group]
-            links = ', '.join(f"[{clean(p['name'])}](private-projects/{p['name']}.md)" for p in entries)
+            links = ', '.join(f"[{clean(p['name'])}](private-projects/{p['id']}.md)" for p in entries)
             interests += [f'| {group} | {len(entries)} | {links} |']
-        interests += ['', '私有项目补充了翻译、截图录屏、知识管理与即时通讯方向的证据。这些方向来自基本介绍，不代表私人生活偏好或技能评价。', '']
+        interests += ['', '私有项目仅以匿名编号与概括方向补充统计，不推断具体业务、私人生活偏好或技能等级。', '']
     (ROOT / 'docs/INTERESTS.md').write_text('\n'.join(interests))
     height = 75 + len(langs) * 35
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" role="img" aria-label="公开自有项目主语言分布">',f'<rect width="720" height="{height}" rx="16" fill="#0f172a"/>','<text x="28" y="36" fill="#f8fafc" font-size="18" font-family="sans-serif">BUILD WITH · 公开自有项目主语言</text>']

@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 .env
 .env.*
+
+# Real private repository mappings must never enter Git.
+*private-config*.json
+*private-mapping*.json
+private-projects.local.json

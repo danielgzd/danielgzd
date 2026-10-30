@@ -1,55 +1,43 @@
 {
-  "updated_at": "2026-10-30T03:34:56+00:00",
-  "window_start": "2025-10-30T03:34:56.912330+00:00",
-  "window_end": "2026-10-30T03:34:56.912330+00:00",
+  "schema_version": 2,
+  "updated_month": "2026-10",
+  "window_start_month": "2025-10",
+  "window_end_month": "2026-10",
   "projects": [
     {
-      "name": "LumaCapture-Commercial",
-      "description": "面向 macOS 的截图、录屏与标注应用商业版本。",
+      "id": "private-b82c81f568e5",
+      "name": "私有项目 01",
+      "description": "持续维护中的私有项目，仅展示概括信息与月度开发活动。",
       "category": "Apple 生态与效率工具",
       "language": "Swift",
       "archived": false,
       "commit_count": 35,
       "activity": [
         {
-          "date": "2026-09-16",
-          "commits": 6
-        },
-        {
-          "date": "2026-09-15",
-          "commits": 8
-        },
-        {
-          "date": "2026-09-14",
-          "commits": 13
-        },
-        {
-          "date": "2026-09-13",
-          "commits": 2
-        },
-        {
-          "date": "2026-09-12",
-          "commits": 6
+          "month": "2026-09",
+          "commits": 35
         }
       ]
     },
     {
-      "name": "MarkdownTextToolPro",
-      "description": "Swift 项目，功能介绍待补充。",
+      "id": "private-963e861caca1",
+      "name": "私有项目 02",
+      "description": "持续维护中的私有项目，仅展示概括信息与月度开发活动。",
       "category": "Apple 生态与效率工具",
       "language": "Swift",
       "archived": false,
       "commit_count": 8,
       "activity": [
         {
-          "date": "2026-09-16",
+          "month": "2026-09",
           "commits": 8
         }
       ]
     },
     {
-      "name": "MyDocBackup",
-      "description": "个人文档备份项目，仅展示维护活动。",
+      "id": "private-ad3a7aaaed02",
+      "name": "私有项目 03",
+      "description": "持续维护中的私有项目，仅展示概括信息与月度开发活动。",
       "category": "学习与知识收藏",
       "language": null,
       "archived": false,
@@ -57,22 +45,24 @@
       "activity": []
     },
     {
-      "name": "Notes",
-      "description": "个人笔记项目，仅展示维护活动。",
+      "id": "private-37b2ccbcfbc4",
+      "name": "私有项目 04",
+      "description": "持续维护中的私有项目，仅展示概括信息与月度开发活动。",
       "category": "学习与知识收藏",
       "language": null,
       "archived": false,
       "commit_count": 2,
       "activity": [
         {
-          "date": "2026-01-12",
+          "month": "2026-01",
           "commits": 2
         }
       ]
     },
     {
-      "name": "Rules",
-      "description": "网络规则整理项目。",
+      "id": "private-58e21b40ac0b",
+      "name": "私有项目 05",
+      "description": "持续维护中的私有项目，仅展示概括信息与月度开发活动。",
       "category": "网络与自托管",
       "language": "JavaScript",
       "archived": false,
@@ -80,8 +70,9 @@
       "activity": []
     },
     {
-      "name": "SoundSync",
-      "description": "Swift 项目，功能介绍待补充。",
+      "id": "private-e871c48a8c65",
+      "name": "私有项目 06",
+      "description": "持续维护中的私有项目，仅展示概括信息与月度开发活动。",
       "category": "其他探索",
       "language": "Swift",
       "archived": false,
@@ -89,33 +80,35 @@
       "activity": []
     },
     {
-      "name": "StardustPost",
-      "description": "自主部署的即时通讯系统，采用本地优先与单二进制部署方式。",
+      "id": "private-5a44814cbe54",
+      "name": "私有项目 07",
+      "description": "持续维护中的私有项目，仅展示概括信息与月度开发活动。",
       "category": "网络与自托管",
       "language": "TypeScript",
       "archived": false,
       "commit_count": 2,
       "activity": [
         {
-          "date": "2026-10-22",
+          "month": "2026-10",
           "commits": 2
         }
       ]
     },
     {
-      "name": "TranslateBox",
-      "description": "离线优先的个人翻译与实时字幕工具，面向 iOS、iPadOS 与 watchOS。",
+      "id": "private-0a0e626a2662",
+      "name": "私有项目 08",
+      "description": "持续维护中的私有项目，仅展示概括信息与月度开发活动。",
       "category": "Apple 生态与效率工具",
       "language": "Swift",
       "archived": false,
       "commit_count": 13,
       "activity": [
         {
-          "date": "2026-10-01",
+          "month": "2026-10",
           "commits": 9
         },
         {
-          "date": "2026-09-16",
+          "month": "2026-09",
           "commits": 4
         }
       ]
