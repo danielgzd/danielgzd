@@ -30,7 +30,7 @@ jobs:
           if [ -n "$GH_TOKEN" ] && [ -n "$PRIVATE_PROJECTS_CONFIG_JSON" ]; then
             python scripts/update_private_projects.py
           else
-            echo '未配置私有项目只读权限或私密映射，保留匿名快照。'
+            echo '未配置私有项目只读权限或私密映射，保留脱敏快照。'
           fi
       - name: 生成公开项目与贡献统计
         env:

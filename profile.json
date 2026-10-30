@@ -110,5 +110,55 @@
         "github-chinese"
       ]
     }
+  ],
+  "private_project_display": [
+    {
+      "id": "private-b82c81f568e5",
+      "name": "LumaCapture-Commercial",
+      "description": "面向 macOS 的截图、录屏与标注应用商业版本。",
+      "category": "Apple 生态与效率工具"
+    },
+    {
+      "id": "private-963e861caca1",
+      "name": "MarkdownTextToolPro",
+      "description": "Swift 项目，功能介绍待补充。",
+      "category": "Apple 生态与效率工具"
+    },
+    {
+      "id": "private-ad3a7aaaed02",
+      "name": "MyDocBackup",
+      "description": "个人文档备份项目，仅展示维护活动。",
+      "category": "学习与知识收藏"
+    },
+    {
+      "id": "private-37b2ccbcfbc4",
+      "name": "Notes",
+      "description": "个人笔记项目，仅展示维护活动。",
+      "category": "学习与知识收藏"
+    },
+    {
+      "id": "private-58e21b40ac0b",
+      "name": "Rules",
+      "description": "网络规则整理项目。",
+      "category": "网络与自托管"
+    },
+    {
+      "id": "private-e871c48a8c65",
+      "name": "SoundSync",
+      "description": "Swift 项目，功能介绍待补充。",
+      "category": "其他探索"
+    },
+    {
+      "id": "private-5a44814cbe54",
+      "name": "StardustPost",
+      "description": "自主部署的即时通讯系统，采用本地优先与单二进制部署方式。",
+      "category": "网络与自托管"
+    },
+    {
+      "id": "private-0a0e626a2662",
+      "name": "TranslateBox",
+      "description": "离线优先的个人翻译与实时字幕工具，面向 iOS、iPadOS 与 watchOS。",
+      "category": "Apple 生态与效率工具"
+    }
   ]
 }

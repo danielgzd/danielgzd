@@ -33,9 +33,9 @@
 
 | 方向 | 私有项目数 | 项目 |
 | --- | ---: | --- |
-| Apple 生态与效率工具 | 3 | [私有项目 01](private-projects/private-b82c81f568e5.md), [私有项目 02](private-projects/private-963e861caca1.md), [私有项目 08](private-projects/private-0a0e626a2662.md) |
-| 学习与知识收藏 | 2 | [私有项目 03](private-projects/private-ad3a7aaaed02.md), [私有项目 04](private-projects/private-37b2ccbcfbc4.md) |
-| 网络与自托管 | 2 | [私有项目 05](private-projects/private-58e21b40ac0b.md), [私有项目 07](private-projects/private-5a44814cbe54.md) |
-| 其他探索 | 1 | [私有项目 06](private-projects/private-e871c48a8c65.md) |
+| Apple 生态与效率工具 | 3 | [LumaCapture-Commercial](private-projects/private-b82c81f568e5.md), [MarkdownTextToolPro](private-projects/private-963e861caca1.md), [TranslateBox](private-projects/private-0a0e626a2662.md) |
+| 学习与知识收藏 | 2 | [MyDocBackup](private-projects/private-ad3a7aaaed02.md), [Notes](private-projects/private-37b2ccbcfbc4.md) |
+| 网络与自托管 | 2 | [Rules](private-projects/private-58e21b40ac0b.md), [StardustPost](private-projects/private-5a44814cbe54.md) |
+| 其他探索 | 1 | [SoundSync](private-projects/private-e871c48a8c65.md) |
 
-私有项目仅以匿名编号与概括方向补充统计，不推断具体业务、私人生活偏好或技能等级。
+私有项目以已确认可展示的名称、介绍与方向补充统计，不公开源码、私有文档或原始提交信息。

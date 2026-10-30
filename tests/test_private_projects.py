@@ -18,6 +18,7 @@ class PrivateProjectsTests(unittest.TestCase):
             (root/'docs').mkdir()
             config={'projects':[{'repository':'DO_NOT_EXPORT_REPOSITORY', 'id':'private-012345abcdef',
                                 'description':'DO_NOT_EXPORT_DESCRIPTION','category':'工具'}]}
+            (root/'profile.json').write_text(json.dumps({'private_project_display':[{'id':'private-012345abcdef','name':'示例工具','description':'可公开的基本介绍','category':'工具'}]}))
             def api(path):
                 if '/commits?' not in path:
                     return {'owner':{'login':'danielgzd'},'private':True,'language':'Swift','archived':False,
@@ -30,10 +31,12 @@ class PrivateProjectsTests(unittest.TestCase):
                 private.main()
             generated='\n'.join(p.read_text() for p in root.rglob('*') if p.is_file())
             self.assertNotIn('DO_NOT_EXPORT',generated)
+            self.assertIn('示例工具',generated)
+            self.assertIn('可公开的基本介绍',generated)
             self.assertNotIn('2026-10-29',generated)
             result=json.loads((root/'data/private-projects.json').read_text())
             self.assertEqual(set(result['projects'][0]),private.PROJECT_KEYS)
-            self.assertEqual(result['projects'][0]['name'],'私有项目 01')
+            self.assertEqual(result['projects'][0]['name'],'示例工具')
             self.assertEqual(result['projects'][0]['activity'],[{'month':'2026-10','commits':1}])
             self.assertTrue((root/'docs/private-projects/private-012345abcdef.md').exists())
             result['projects'][0]['repository']='DO_NOT_EXPORT_REPOSITORY'

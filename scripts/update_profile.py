@@ -110,7 +110,7 @@ def render(snapshot, config):
     for r in sorted(own, key=lambda r: r['pushed_at'] or '', reverse=True)[:5]:
         lines += [f"- [{r['name']}]({r['html_url']}) · {str(r['pushed_at'])[:10]} · {clean(r['language'])}"]
     lines += ['', '---', '', f"<sub>公开数据更新于 {snapshot['updated_at']} · 每日自动整理 · MIT License</sub>", '',
-        '<sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布匿名概括信息与月度活动，源码保持私有。</sub>', '']
+        '<sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布项目名称、基本介绍与月度活动，源码保持私有。</sub>', '']
     (ROOT / 'README.md').write_text('\n'.join(lines))
     catalog = ['# 项目地图', '', '私有项目的基本介绍与更新记录见 [非公开项目目录](PRIVATE_PROJECTS.md)。以下按用途分类，保留全部公开仓库。自有非 Fork 仅指仓库属性，不等同于独立原创认证。分类可在 `profile.json` 修正。', '']
     for group, items in groups.items():
@@ -134,7 +134,7 @@ def render(snapshot, config):
             entries = [p for p in private_projects if p['category'] == group]
             links = ', '.join(f"[{clean(p['name'])}](private-projects/{p['id']}.md)" for p in entries)
             interests += [f'| {group} | {len(entries)} | {links} |']
-        interests += ['', '私有项目仅以匿名编号与概括方向补充统计，不推断具体业务、私人生活偏好或技能等级。', '']
+        interests += ['', '私有项目以已确认可展示的名称、介绍与方向补充统计，不公开源码、私有文档或原始提交信息。', '']
     (ROOT / 'docs/INTERESTS.md').write_text('\n'.join(interests))
     height = 75 + len(langs) * 35
     svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" role="img" aria-label="公开自有项目主语言分布">',f'<rect width="720" height="{height}" rx="16" fill="#0f172a"/>','<text x="28" y="36" fill="#f8fafc" font-size="18" font-family="sans-serif">BUILD WITH · 公开自有项目主语言</text>']

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export anonymous private-project summaries; private identities stay outside Git."""
+"""Export reviewed private-project introductions and monthly activity; never export raw commit details."""
 import collections
 import datetime as dt
 import json
@@ -25,8 +25,8 @@ def summarize_commits(commits):
 
 
 def validate_snapshot(data):
-    if set(data) != SNAPSHOT_KEYS or data['schema_version'] != 2:
-        raise ValueError('Only anonymous schema version 2 may be published')
+    if set(data) != SNAPSHOT_KEYS or data['schema_version'] != 3:
+        raise ValueError('Only reviewed showcase schema version 3 may be published')
     for key in ['updated_month','window_start_month','window_end_month']:
         if not re.fullmatch(r'\d{4}-\d{2}',data[key]):
             raise ValueError('Only month precision is allowed')
@@ -34,8 +34,8 @@ def validate_snapshot(data):
     for project in data['projects']:
         if set(project) != PROJECT_KEYS or not re.fullmatch(r'private-[0-9a-f]{12}',project['id']):
             raise ValueError('Invalid public private-project fields')
-        if project['id'] in ids or not re.fullmatch(r'私有项目 \d{2,}',project['name']):
-            raise ValueError('Invalid anonymous display identity')
+        if project['id'] in ids or not isinstance(project['name'],str) or not project['name'].strip():
+            raise ValueError('Invalid display identity')
         ids.add(project['id'])
         for day in project['activity']:
             if set(day) != {'month','commits'} or not re.fullmatch(r'\d{4}-\d{2}',day['month']):
@@ -57,7 +57,7 @@ def render_private(root=ROOT):
         if page.name not in expected_pages:
             page.unlink()
     lines = ['# 非公开项目', '',
-        '私有项目以匿名编号展示，仅发布概括信息和月度开发活动。点击项目名称查看更新记录；真实仓库名与源码不在本仓库发布。', '',
+        '展示私有项目的名称、基本介绍与月度开发活动。点击项目名称查看更新记录；源码与敏感信息保持私有。', '',
         f"快照月份：{data['updated_month']}。统计为采集时近 365 天默认分支可达提交，包含所有作者。日期仅保留到月，不展示具体开发日期。", '',
         '| 项目 | 分类 | 主语言 | 窗口提交数 | 最近活动月份 | 基本介绍 |',
         '| --- | --- | --- | ---: | --- | --- |']
@@ -69,7 +69,7 @@ def render_private(root=ROOT):
             f"- 统计月份范围：{data['window_start_month']} 至 {data['window_end_month']}（首尾月为部分月份）",
             f"- 采集时近 365 天提交数：{p['commit_count']}（默认分支，所有作者）",
             f"- 快照月份：{data['updated_month']}", '',
-            '## 更新记录', '', '仅按 UTC 月份汇总开发活动。真实仓库名、提交标题、作者、邮箱、哈希、分支、文件路径、具体日期与源码均不展示。', '',
+            '## 更新记录', '', '仅按 UTC 月份汇总开发活动。提交标题、作者、邮箱、哈希、分支、文件路径、具体日期与源码均不展示。', '',
             '| 月份 | 提交次数 | 更新摘要 |', '| --- | ---: | --- |']
         for month in p['activity']:
             detail += [f"| {month['month']} | {month['commits']} | 项目维护与开发 |"]
@@ -94,6 +94,7 @@ def main():
     end = dt.datetime.now(dt.timezone.utc)
     start = end - dt.timedelta(days=365)
     window = urllib.parse.urlencode({'since': start.isoformat(), 'until': end.isoformat(), 'per_page':100})
+    display = {p['id']:p for p in json.loads((ROOT/'profile.json').read_text())['private_project_display']}
     projects = []
     for index, entry in enumerate(config['projects'],1):
         name = entry['repository']
@@ -110,17 +111,18 @@ def main():
             if len(batch) < 100:
                 break
             page += 1
-        # No API descriptions, identities, exact dates or raw commit fields are exported.
-        projects.append({'id':entry['id'], 'name':f'私有项目 {index:02d}',
-            'description':'持续维护中的私有项目，仅展示概括信息与月度开发活动。',
-            'category':entry['category'], 'language':repo['language'], 'archived':repo['archived'],
+        # Names and descriptions come only from explicitly reviewed public display metadata.
+        public = display[entry['id']]
+        projects.append({'id':entry['id'], 'name':public['name'],
+            'description':public['description'],
+            'category':public['category'], 'language':repo['language'], 'archived':repo['archived'],
             'commit_count':len(commits), 'activity':summarize_commits(commits)})
-    snapshot = {'schema_version':2,'updated_month':end.strftime('%Y-%m'),
+    snapshot = {'schema_version':3,'updated_month':end.strftime('%Y-%m'),
         'window_start_month':start.strftime('%Y-%m'),'window_end_month':end.strftime('%Y-%m'), 'projects':projects}
     validate_snapshot(snapshot)
     (ROOT / 'data/private-projects.json').write_text(json.dumps(snapshot,ensure_ascii=False,indent=2)+'\n')
     render_private(ROOT)
-    print(f'Exported {len(projects)} anonymous project summaries')
+    print(f'Exported {len(projects)} reviewed private-project summaries')
 
 if __name__ == '__main__':
     try:
