@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Public-only GitHub inventory and profile generator. Python standard library only."""
+"""Public GitHub inventory plus sanitized private-project showcase generator. Python standard library only."""
 import collections
 import datetime as dt
 import html
@@ -53,13 +53,16 @@ def render(snapshot, config):
     for repo in repos:
         if repo['name'] != USER:
             groups[category(repo, config)].append(repo)
+    private_path = ROOT / 'data/private-projects.json'
+    private_snapshot = json.loads(private_path.read_text()) if private_path.exists() else None
+    private_projects = private_snapshot['projects'] if private_snapshot else []
     c = snapshot.get('contributions')
     lines = ['<div align="center">', '',
         '# Hi, I’m Daniel 👋', '',
         '**把好奇心写成代码，把重复的事交给工具。**', '',
         '在 Apple 生态、自动化与网络工具之间持续探索，',
         '把日常遇到的小问题，做成可复用、可维护的小作品。', '',
-        '[项目地图](docs/PROJECTS.md) · [数据与口径](docs/METRICS.md) · [访问归档](docs/TRAFFIC.md) · [兴趣画像](docs/INTERESTS.md) · [更新指南](docs/MAINTENANCE.md)', '',
+        '[项目地图](docs/PROJECTS.md) · [非公开项目](docs/PRIVATE_PROJECTS.md) · [数据与口径](docs/METRICS.md) · [访问归档](docs/TRAFFIC.md) · [兴趣画像](docs/INTERESTS.md) · [更新指南](docs/MAINTENANCE.md)', '',
         '![Profile views](https://komarev.com/ghpvc/?username=danielgzd&label=PROFILE+VIEWS&color=0f766e&style=flat-square)',
         '[![每日更新](https://github.com/danielgzd/danielgzd/actions/workflows/profile.yml/badge.svg)](https://github.com/danielgzd/danielgzd/actions/workflows/profile.yml)', '',
         '</div>', '', '## 正在构建的作品', '',
@@ -70,13 +73,20 @@ def render(snapshot, config):
             r = by_name[name]
             desc = config['descriptions'].get(name) or r['description'] or '项目内容持续整理中。'
             lines += [f"- **[{name}]({r['html_url']})** · {desc}"]
-    lines += ['', '## 开源足迹', '', '| 指标 | 当前快照 |', '| :--- | ---: |',
-        f'| 公开仓库（包含本首页） | {len(repos)} |', f'| 自有非 Fork 项目（不含首页） | {len(own)} |',
-        f'| Fork 探索仓库 | {len(forks)} |', f"| 自有项目获得 Star | {sum(r['stargazers_count'] for r in own)} |",
-        f"| 自有项目被 Fork | {sum(r['forks_count'] for r in own)} |",
+    if private_snapshot:
+        lines += ['', '## 幕后也在生长的作品', '', '有些项目仍在打磨，有些服务于个人工作流。这里保留它们的开发足迹，代码继续私有。', '', '| 项目与更新记录 | 基本介绍 |', '| --- | --- |']
+        for project in private_projects:
+            lines += [f"| [{clean(project['name'])}](docs/private-projects/{project['name']}.md) | {clean(project['description'])} |"]
+        lines += ['', f"私有项目快照：{private_snapshot['updated_at']} · [查看完整统计与更新记录](docs/PRIVATE_PROJECTS.md)"]
+    lines += ['', '## 项目与开发足迹', '', '| 指标 | 当前快照 |', '| :--- | ---: |',
+        f'| 公开仓库（包含本首页） | {len(repos)} |', f'| 公开自有非 Fork 项目（不含首页） | {len(own)} |',
+        f'| Fork 探索仓库 | {len(forks)} |', f"| 公开自有项目获得 Star | {sum(r['stargazers_count'] for r in own)} |",
+        f"| 公开自有项目被 Fork | {sum(r['forks_count'] for r in own)} |",
         f"| Followers / Following | {snapshot['profile']['followers']} / {snapshot['profile']['following']} |",
-        f"| 自有项目已归档 | {sum(r['archived'] for r in own)} |",
-        f"| 自有项目开放 Issue + PR | {sum(r['open_issues_count'] for r in own)} |"]
+        f"| 公开自有项目已归档 | {sum(r['archived'] for r in own)} |",
+        f"| 公开自有项目开放 Issue + PR | {sum(r['open_issues_count'] for r in own)} |"]
+    if private_snapshot:
+        lines += [f'| 私有项目（已纳入展示） | {len(private_projects)} |', f'| 已统计仓库合计（公开 + 私有） | {len(repos) + len(private_projects)} |', f'| 自有项目合计（公开 + 私有，不含首页与 Fork） | {len(own) + len(private_projects)} |', f"| 私有项目近 365 天默认分支提交（所有作者） | {sum(p['commit_count'] for p in private_projects)} |"]
     if c:
         lines += [f"| 近一年公开贡献 | {c['contributionCalendar']['totalContributions']} |",
             f"| 近一年 Commit 贡献 | {c['totalCommitContributions']} |",
@@ -86,19 +96,20 @@ def render(snapshot, config):
         lines += ['| 近一年贡献 / Commit | 暂未取得，见数据说明 |']
     if c:
         lines += ['', '贡献快照时间：' + snapshot.get('contributions_updated_at', snapshot['updated_at'])]
-    lines += ['', '![原创项目语言分布](assets/languages.svg)', '',
-        '语言按自有非 Fork 项目的主语言计数，不代表代码行数或熟练程度。Commit 为 GitHub 贡献口径，非全平台、全分支的历史提交总量。', '',
-        '## 我的探索地图', '', '| 方向 | 自有项目 | Fork 收藏 |', '| :--- | ---: | ---: |']
-    for group, items in groups.items():
-        lines += [f"| {group} | {sum(not r['fork'] for r in items)} | {sum(r['fork'] for r in items)} |"]
+    lines += ['', '![公开自有项目语言分布](assets/languages.svg)', '',
+        '语言按公开自有非 Fork 项目的主语言计数，不代表代码行数或熟练程度。Commit 为 GitHub 贡献口径，非全平台、全分支的历史提交总量。', '',
+        '## 我的探索地图', '', '| 方向 | 公开自有项目 | Fork 收藏 | 私有项目 |', '| :--- | ---: | ---: | ---: |']
+    for group in dict.fromkeys([*groups, *(p['category'] for p in private_projects)]):
+        items = groups[group]
+        lines += [f"| {group} | {sum(not r['fork'] for r in items)} | {sum(r['fork'] for r in items)} | {sum(p['category'] == group for p in private_projects)} |"]
     lines += ['', '从公开仓库看，我的探索集中在 **Apple 生态、网络配置与自动化**。这是一份可修正的项目兴趣地图；Fork 表达关注，不代表参与开发、实际使用或认可项目的全部功能。', '',
         '## 最近更新', '']
     for r in sorted(own, key=lambda r: r['pushed_at'] or '', reverse=True)[:5]:
         lines += [f"- [{r['name']}]({r['html_url']}) · {str(r['pushed_at'])[:10]} · {clean(r['language'])}"]
     lines += ['', '---', '', f"<sub>公开数据更新于 {snapshot['updated_at']} · 每日自动整理 · MIT License</sub>", '',
-        '<sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。仅公开账户与仓库数据进入本仓库。</sub>', '']
+        '<sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布已配置的基本介绍与按日提交次数，源码保持私有。</sub>', '']
     (ROOT / 'README.md').write_text('\n'.join(lines))
-    catalog = ['# 项目地图', '', '按用途分类，保留全部公开仓库。自有非 Fork 仅指仓库属性，不等同于独立原创认证。分类可在 `profile.json` 修正。', '']
+    catalog = ['# 项目地图', '', '私有项目的基本介绍与更新记录见 [非公开项目目录](PRIVATE_PROJECTS.md)。以下按用途分类，保留全部公开仓库。自有非 Fork 仅指仓库属性，不等同于独立原创认证。分类可在 `profile.json` 修正。', '']
     for group, items in groups.items():
         catalog += [f'## {group}', '', '| 项目 | 类型 | 主语言 | Star | 简介 |', '| --- | --- | --- | ---: | --- |']
         for r in sorted(items, key=lambda r: (r['fork'], r['name'].lower())):
@@ -114,9 +125,16 @@ def render(snapshot, config):
         interests += [f"| {group} | {sum(not r['fork'] for r in items)} | {sum(r['fork'] for r in items)} | {evidence} |"]
     interests += ['', '## 如何解读', '', '自有项目比单纯 Fork 更能表明投入方向；但主语言、仓库数量和更新时间均不能证明投入时长或技能等级。Fork 的更新时间可能来自上游，不能当作个人活跃记录。没有描述的项目保留在“其他探索”，不凭名字编造用途。', '',
         '## 后续可扩展', '', '- 人工确认项目阶段、用途与展示顺序。', '- 按月比较公开快照，观察方向变化。', '- 经本人选择后再引入 Star 列表或公开 README 文本，增加证据覆盖。', '']
+    if private_projects:
+        interests += ['## 私有项目补充证据', '', '以下仅使用本人允许展示的项目方向与主语言，不读取源码、提交标题或笔记内容。', '', '| 方向 | 私有项目数 | 项目 |', '| --- | ---: | --- |']
+        for group in dict.fromkeys(p['category'] for p in private_projects):
+            entries = [p for p in private_projects if p['category'] == group]
+            links = ', '.join(f"[{clean(p['name'])}](private-projects/{p['name']}.md)" for p in entries)
+            interests += [f'| {group} | {len(entries)} | {links} |']
+        interests += ['', '私有项目补充了翻译、截图录屏、知识管理与即时通讯方向的证据。这些方向来自基本介绍，不代表私人生活偏好或技能评价。', '']
     (ROOT / 'docs/INTERESTS.md').write_text('\n'.join(interests))
     height = 75 + len(langs) * 35
-    svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" role="img" aria-label="自有项目主语言分布">',f'<rect width="720" height="{height}" rx="16" fill="#0f172a"/>','<text x="28" y="36" fill="#f8fafc" font-size="18" font-family="sans-serif">BUILD WITH · 自有项目主语言</text>']
+    svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}" role="img" aria-label="公开自有项目主语言分布">',f'<rect width="720" height="{height}" rx="16" fill="#0f172a"/>','<text x="28" y="36" fill="#f8fafc" font-size="18" font-family="sans-serif">BUILD WITH · 公开自有项目主语言</text>']
     for i, (lang, count) in enumerate(langs.most_common()):
         y = 65 + i*35
         svg += [f'<text x="28" y="{y+14}" fill="#cbd5e1" font-size="14" font-family="sans-serif">{html.escape(lang)}</text>', f'<rect x="160" y="{y}" width="{450*count/max(langs.values())}" height="19" rx="5" fill="#2dd4bf"/>',f'<text x="640" y="{y+14}" fill="#e2e8f0" font-size="14">{count}</text>']
@@ -162,6 +180,8 @@ def main():
         snapshot['contributions_source'] = 'public-actions'
     (ROOT / 'data/public.json').write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + '\n')
     render(snapshot, config)
+    from update_private_projects import render_private
+    render_private(ROOT)
     print(f'Generated profile: {len(repos)} public repositories; contributions: {snapshot["contributions_status"]}')
 
 if __name__ == '__main__':

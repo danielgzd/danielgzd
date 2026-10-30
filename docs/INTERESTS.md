@@ -26,3 +26,16 @@
 - 人工确认项目阶段、用途与展示顺序。
 - 按月比较公开快照，观察方向变化。
 - 经本人选择后再引入 Star 列表或公开 README 文本，增加证据覆盖。
+
+## 私有项目补充证据
+
+以下仅使用本人允许展示的项目方向与主语言，不读取源码、提交标题或笔记内容。
+
+| 方向 | 私有项目数 | 项目 |
+| --- | ---: | --- |
+| Apple 生态与效率工具 | 3 | [LumaCapture-Commercial](private-projects/LumaCapture-Commercial.md), [MarkdownTextToolPro](private-projects/MarkdownTextToolPro.md), [TranslateBox](private-projects/TranslateBox.md) |
+| 学习与知识收藏 | 2 | [MyDocBackup](private-projects/MyDocBackup.md), [Notes](private-projects/Notes.md) |
+| 网络与自托管 | 2 | [Rules](private-projects/Rules.md), [StardustPost](private-projects/StardustPost.md) |
+| 其他探索 | 1 | [SoundSync](private-projects/SoundSync.md) |
+
+私有项目补充了翻译、截图录屏、知识管理与即时通讯方向的证据。这些方向来自基本介绍，不代表私人生活偏好或技能评价。

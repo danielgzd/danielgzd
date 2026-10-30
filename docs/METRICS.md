@@ -18,3 +18,11 @@
 - [贡献计数规则](https://docs.github.com/en/account-and-profile/reference/profile-contributions-reference)
 - [GITHUB_TOKEN 仓库权限边界](https://docs.github.com/en/actions/concepts/security/github_token)
 - [访客计数器说明](https://github.com/antonkomarev/github-profile-views-counter)
+
+## 私有项目展示口径
+
+私有项目单独发布在 `data/private-projects.json` 与 `docs/private-projects/`。仅展示 `profile.json` 显式列出的本人项目，描述使用整理后的基本介绍；不自动公开未来新增私有仓库。公开与私有仓库总数为这两份快照之和，分别标注更新时间。
+
+私有项目提交数为近 365 天默认分支可达的所有作者提交，按提交者日期（UTC）聚合；不导出原始提交标题、作者、邮箱、哈希、分支、文件路径或源码。它与 GitHub 公开个人贡献的统计范围不同，**两者不能相加作为个人 Commit 总量**。更新记录中的“项目开发更新”为统一摘要，不代表具体功能已经交付。
+
+GitHub 私有仓库不能向匿名访客单独开放原始提交历史而隐藏源码。因此项目入口链接到本主仓库的脱敏更新页，不链接到私有代码仓库，也不修改原仓库的可见性。更新失败会保留上一份完整快照；超过 365 天的活动会退出当前展示窗口。

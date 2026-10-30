@@ -22,6 +22,15 @@ jobs:
           python-version: '3.12'
       - name: 验证分类与流量归档规则
         run: python -m unittest discover -s tests -v
+      - name: 刷新私有项目的脱敏更新记录（可选只读凭据）
+        env:
+          GH_TOKEN: ${{ secrets.PRIVATE_PROJECTS_READ_TOKEN }}
+        run: |
+          if [ -n "$GH_TOKEN" ]; then
+            python scripts/update_private_projects.py
+          else
+            echo '未配置私有项目只读权限，保留最后一次完整的脱敏项目快照。'
+          fi
       - name: 生成公开项目与贡献统计
         env:
           GH_TOKEN: ${{ github.token }}
@@ -39,7 +48,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md docs/PROJECTS.md docs/INTERESTS.md docs/TRAFFIC.md assets data
+          git add README.md docs/PROJECTS.md docs/INTERESTS.md docs/TRAFFIC.md docs/PRIVATE_PROJECTS.md docs/private-projects assets data
           if ! git diff --cached --quiet; then
             git commit -m '更新公开项目分类与个人统计快照'
             git push

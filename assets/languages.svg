@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="215" viewBox="0 0 720 215" role="img" aria-label="自有项目主语言分布">
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="215" viewBox="0 0 720 215" role="img" aria-label="公开自有项目主语言分布">
 <rect width="720" height="215" rx="16" fill="#0f172a"/>
-<text x="28" y="36" fill="#f8fafc" font-size="18" font-family="sans-serif">BUILD WITH · 自有项目主语言</text>
+<text x="28" y="36" fill="#f8fafc" font-size="18" font-family="sans-serif">BUILD WITH · 公开自有项目主语言</text>
 <text x="28" y="79" fill="#cbd5e1" font-size="14" font-family="sans-serif">Python</text>
 <rect x="160" y="65" width="450.0" height="19" rx="5" fill="#2dd4bf"/>
 <text x="640" y="79" fill="#e2e8f0" font-size="14">3</text>
