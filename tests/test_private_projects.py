@@ -43,6 +43,11 @@ class PrivateProjectsTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 private.validate_snapshot(result)
 
+    def test_transient_api_failure_is_retried_without_logging(self):
+        with patch.object(private,'api',side_effect=[RuntimeError('private request detail'), {'ok': True}]) as request:
+            self.assertEqual(private.read_private_api('synthetic-path'), {'ok':True})
+            self.assertEqual(request.call_count,2)
+
     def test_monthly_aggregation_merges_dates(self):
         rows=[{'commit':{'committer':{'date':date}}} for date in ['2026-10-29T00:00:00Z','2026-10-01T00:00:00Z']]
         self.assertEqual(private.summarize_commits(rows),[{'month':'2026-10','commits':2}])

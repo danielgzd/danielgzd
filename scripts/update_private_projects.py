@@ -8,10 +8,23 @@ from pathlib import Path
 import re
 import sys
 import urllib.parse
+import urllib.error
 from update_profile import ROOT, USER, api, clean
 
 PROJECT_KEYS = {'id','name','description','category','language','archived','commit_count','activity'}
 SNAPSHOT_KEYS = {'schema_version','updated_month','window_start_month','window_end_month','projects'}
+
+
+def read_private_api(path):
+    for attempt in range(3):
+        try:
+            return api(path)
+        except urllib.error.HTTPError as error:
+            if error.code < 500 or attempt == 2:
+                raise
+        except (RuntimeError, urllib.error.URLError):
+            if attempt == 2:
+                raise
 
 
 def summarize_commits(commits):
@@ -100,13 +113,13 @@ def main():
         name = entry['repository']
         if not re.fullmatch(r'[A-Za-z0-9._-]+',name):
             raise ValueError('Invalid repository configuration')
-        repo = api(f'repos/{USER}/{name}')
+        repo = read_private_api(f'repos/{USER}/{name}')
         if repo['owner']['login'].lower() != USER or not repo['private']:
             raise ValueError('Expected owned private repository')
         commits = []
         page = 1
         while True:
-            batch = api(f'repos/{USER}/{name}/commits?{window}&page={page}')
+            batch = read_private_api(f'repos/{USER}/{name}/commits?{window}&page={page}')
             commits.extend(batch)
             if len(batch) < 100:
                 break
