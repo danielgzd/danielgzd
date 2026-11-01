@@ -57,12 +57,12 @@
 | 已统计仓库合计（公开 + 私有） | 77 |
 | 自有项目合计（公开 + 私有，不含首页与 Fork） | 19 |
 | 私有项目近 365 天默认分支提交（所有作者） | 60 |
-| 近一年公开贡献 | 649 |
-| 近一年 Commit 贡献 | 630 |
+| 近一年公开贡献 | 655 |
+| 近一年 Commit 贡献 | 636 |
 | 近一年 PR / Issue / Review 贡献 | 1 / 3 / 0 |
 | 近一年有贡献的天数 | 176 |
 
-贡献快照时间：2026-10-31 13:57 UTC+8
+贡献快照时间：2026-11-01 14:25 UTC+8
 
 ![公开自有项目语言分布](assets/languages.svg)
 
@@ -85,14 +85,14 @@
 
 ## 最近更新
 
-- [danielgzd.github.io](https://github.com/danielgzd/danielgzd.github.io) · 2026-10-31 · TypeScript
-- [MyAutoScript](https://github.com/danielgzd/MyAutoScript) · 2026-10-31 · Python
-- [Cloudflare-SpeedTest-BestIP](https://github.com/danielgzd/Cloudflare-SpeedTest-BestIP) · 2026-10-30 · Python
-- [proxy-rules](https://github.com/danielgzd/proxy-rules) · 2026-10-30 · JavaScript
+- [danielgzd.github.io](https://github.com/danielgzd/danielgzd.github.io) · 2026-11-01 · TypeScript
+- [MyAutoScript](https://github.com/danielgzd/MyAutoScript) · 2026-11-01 · JavaScript
+- [Cloudflare-SpeedTest-BestIP](https://github.com/danielgzd/Cloudflare-SpeedTest-BestIP) · 2026-10-31 · Python
+- [proxy-rules](https://github.com/danielgzd/proxy-rules) · 2026-10-31 · JavaScript
 - [DeviceMapping](https://github.com/danielgzd/DeviceMapping) · 2026-10-30 · Swift
 
 ---
 
-<sub>公开数据更新于 2026-10-31 13:57 UTC+8 · 每日自动整理 · MIT License</sub>
+<sub>公开数据更新于 2026-11-01 14:25 UTC+8 · 每日自动整理 · MIT License</sub>
 
 <sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布项目名称、基本介绍与月度活动，源码保持私有。</sub>

@@ -65,7 +65,7 @@
 
 | 项目 | 类型 | 主语言 | Star | 简介 |
 | --- | --- | --- | ---: | --- |
-| [MyAutoScript](https://github.com/danielgzd/MyAutoScript) | 自有 | Python | 0 | 把重复操作交给自动化脚本。 |
+| [MyAutoScript](https://github.com/danielgzd/MyAutoScript) | 自有 | JavaScript | 0 | 把重复操作交给自动化脚本。 |
 | [dailycheckin](https://github.com/danielgzd/dailycheckin) | Fork | Python | 0 | 基于「Docker」/「青龙面板」/「群晖」的每日签到脚本（支持多账号）签到列表: ｜爱奇艺｜全民K歌｜有道云笔记｜百度贴吧｜Bilibili｜V2EX｜AcFun｜什么值得买｜阿里云盘｜i茅台申购｜小米运动｜百度搜索资源平台｜恩山论坛｜奥拉星｜ |
 | [JD](https://github.com/danielgzd/JD) | Fork | — | 0 | 已转战Docker。此库仅用于代码的研究学习。佛系同步大佬云库，仅用于测试云函数适配。禁止传播！ |
 | [jd-assistant](https://github.com/danielgzd/jd-assistant) | Fork | — | 0 | 京东抢购助手：包含登录，查询商品库存/价格，添加/清空购物车，抢购商品(下单)，查询订单等功能 |

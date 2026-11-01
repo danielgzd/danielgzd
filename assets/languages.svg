@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="215" viewBox="0 0 720 215" role="img" aria-label="公开自有项目主语言分布">
 <rect width="720" height="215" rx="16" fill="#0f172a"/>
 <text x="28" y="36" fill="#f8fafc" font-size="18" font-family="sans-serif">BUILD WITH · 公开自有项目主语言</text>
-<text x="28" y="79" fill="#cbd5e1" font-size="14" font-family="sans-serif">Python</text>
+<text x="28" y="79" fill="#cbd5e1" font-size="14" font-family="sans-serif">Swift</text>
 <rect x="160" y="65" width="450.0" height="19" rx="5" fill="#2dd4bf"/>
 <text x="640" y="79" fill="#e2e8f0" font-size="14">3</text>
-<text x="28" y="114" fill="#cbd5e1" font-size="14" font-family="sans-serif">Swift</text>
-<rect x="160" y="100" width="450.0" height="19" rx="5" fill="#2dd4bf"/>
-<text x="640" y="114" fill="#e2e8f0" font-size="14">3</text>
-<text x="28" y="149" fill="#cbd5e1" font-size="14" font-family="sans-serif">TypeScript</text>
-<rect x="160" y="135" width="150.0" height="19" rx="5" fill="#2dd4bf"/>
-<text x="640" y="149" fill="#e2e8f0" font-size="14">1</text>
-<text x="28" y="184" fill="#cbd5e1" font-size="14" font-family="sans-serif">JavaScript</text>
+<text x="28" y="114" fill="#cbd5e1" font-size="14" font-family="sans-serif">Python</text>
+<rect x="160" y="100" width="300.0" height="19" rx="5" fill="#2dd4bf"/>
+<text x="640" y="114" fill="#e2e8f0" font-size="14">2</text>
+<text x="28" y="149" fill="#cbd5e1" font-size="14" font-family="sans-serif">JavaScript</text>
+<rect x="160" y="135" width="300.0" height="19" rx="5" fill="#2dd4bf"/>
+<text x="640" y="149" fill="#e2e8f0" font-size="14">2</text>
+<text x="28" y="184" fill="#cbd5e1" font-size="14" font-family="sans-serif">TypeScript</text>
 <rect x="160" y="170" width="150.0" height="19" rx="5" fill="#2dd4bf"/>
 <text x="640" y="184" fill="#e2e8f0" font-size="14">1</text>
 </svg>
