@@ -17,9 +17,13 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+      - name: Use preinstalled Python (standard library only)
+        shell: bash
+        run: |
+          python3 --version
+          mkdir -p "$RUNNER_TEMP/python-bin"
+          ln -sf "$(command -v python3)" "$RUNNER_TEMP/python-bin/python"
+          echo "$RUNNER_TEMP/python-bin" >> "$GITHUB_PATH"
       - name: 验证分类与流量归档规则
         run: python -m unittest discover -s tests -v
       - name: 刷新私有项目的脱敏更新记录（可选只读凭据）
