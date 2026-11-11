@@ -57,12 +57,12 @@
 | 已统计仓库合计（公开 + 私有） | 77 |
 | 自有项目合计（公开 + 私有，不含首页与 Fork） | 19 |
 | 私有项目近 365 天默认分支提交（所有作者） | 60 |
-| 近一年公开贡献 | 694 |
-| 近一年 Commit 贡献 | 676 |
+| 近一年公开贡献 | 696 |
+| 近一年 Commit 贡献 | 678 |
 | 近一年 PR / Issue / Review 贡献 | 1 / 2 / 0 |
-| 近一年有贡献的天数 | 185 |
+| 近一年有贡献的天数 | 186 |
 
-贡献快照时间：2026-11-10 15:30 UTC+8
+贡献快照时间：2026-11-11 14:46 UTC+8
 
 ![公开自有项目语言分布](assets/languages.svg)
 
@@ -85,14 +85,14 @@
 
 ## 最近更新
 
-- [danielgzd.github.io](https://github.com/danielgzd/danielgzd.github.io) · 2026-11-10 · TypeScript
-- [MyAutoScript](https://github.com/danielgzd/MyAutoScript) · 2026-11-10 · JavaScript
-- [Cloudflare-SpeedTest-BestIP](https://github.com/danielgzd/Cloudflare-SpeedTest-BestIP) · 2026-11-10 · Python
-- [proxy-rules](https://github.com/danielgzd/proxy-rules) · 2026-11-09 · JavaScript
+- [danielgzd.github.io](https://github.com/danielgzd/danielgzd.github.io) · 2026-11-11 · TypeScript
+- [MyAutoScript](https://github.com/danielgzd/MyAutoScript) · 2026-11-11 · JavaScript
+- [Cloudflare-SpeedTest-BestIP](https://github.com/danielgzd/Cloudflare-SpeedTest-BestIP) · 2026-11-11 · Python
+- [proxy-rules](https://github.com/danielgzd/proxy-rules) · 2026-11-10 · JavaScript
 - [MarkdownTextTool](https://github.com/danielgzd/MarkdownTextTool) · 2026-11-09 · Swift
 
 ---
 
-<sub>公开数据更新于 2026-11-10 15:30 UTC+8 · 每日自动整理 · MIT License</sub>
+<sub>公开数据更新于 2026-11-11 14:46 UTC+8 · 每日自动整理 · MIT License</sub>
 
 <sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布项目名称、基本介绍与月度活动，源码保持私有。</sub>
