@@ -45,24 +45,24 @@
 
 | 指标 | 当前快照 |
 | :--- | ---: |
-| 公开仓库（包含本首页） | 69 |
-| 公开自有非 Fork 项目（不含首页） | 11 |
+| 公开仓库（包含本首页） | 70 |
+| 公开自有非 Fork 项目（不含首页） | 12 |
 | Fork 探索仓库 | 57 |
 | 公开自有项目获得 Star | 4 |
-| 公开自有项目被 Fork | 1 |
+| 公开自有项目被 Fork | 2 |
 | Followers / Following | 1 / 10 |
 | 公开自有项目已归档 | 0 |
 | 公开自有项目开放 Issue + PR | 0 |
 | 私有项目（已纳入展示） | 8 |
-| 已统计仓库合计（公开 + 私有） | 77 |
-| 自有项目合计（公开 + 私有，不含首页与 Fork） | 19 |
+| 已统计仓库合计（公开 + 私有） | 78 |
+| 自有项目合计（公开 + 私有，不含首页与 Fork） | 20 |
 | 私有项目近 365 天默认分支提交（所有作者） | 60 |
-| 近一年公开贡献 | 722 |
-| 近一年 Commit 贡献 | 704 |
+| 近一年公开贡献 | 726 |
+| 近一年 Commit 贡献 | 707 |
 | 近一年 PR / Issue / Review 贡献 | 1 / 2 / 0 |
-| 近一年有贡献的天数 | 190 |
+| 近一年有贡献的天数 | 191 |
 
-贡献快照时间：2026-11-15 14:50 UTC+8
+贡献快照时间：2026-11-16 14:49 UTC+8
 
 ![公开自有项目语言分布](assets/languages.svg)
 
@@ -72,27 +72,27 @@
 
 | 方向 | 公开自有项目 | Fork 收藏 | 私有项目 |
 | :--- | ---: | ---: | ---: |
+| 其他探索 | 4 | 2 | 1 |
 | Apple 生态与效率工具 | 3 | 7 | 3 |
 | 影音与数字生活 | 0 | 7 | 0 |
 | 网络与自托管 | 3 | 16 | 2 |
 | AI 与开发工具 | 0 | 3 | 0 |
 | 自动化与日常脚本 | 1 | 16 | 0 |
 | Web 与交互创作 | 1 | 3 | 0 |
-| 其他探索 | 3 | 2 | 1 |
 | 学习与知识收藏 | 0 | 3 | 2 |
 
 从公开仓库看，我的探索集中在 **Apple 生态、网络配置与自动化**。这是一份可修正的项目兴趣地图；Fork 表达关注，不代表参与开发、实际使用或认可项目的全部功能。
 
 ## 最近更新
 
-- [danielgzd.github.io](https://github.com/danielgzd/danielgzd.github.io) · 2026-11-15 · TypeScript
-- [MyAutoScript](https://github.com/danielgzd/MyAutoScript) · 2026-11-15 · JavaScript
-- [Cloudflare-SpeedTest-BestIP](https://github.com/danielgzd/Cloudflare-SpeedTest-BestIP) · 2026-11-14 · Python
-- [proxy-rules](https://github.com/danielgzd/proxy-rules) · 2026-11-14 · JavaScript
-- [MarkdownTextTool](https://github.com/danielgzd/MarkdownTextTool) · 2026-11-09 · Swift
+- [danielgzd.github.io](https://github.com/danielgzd/danielgzd.github.io) · 2026-11-16 · TypeScript
+- [MyAutoScript](https://github.com/danielgzd/MyAutoScript) · 2026-11-16 · JavaScript
+- [Cloudflare-SpeedTest-BestIP](https://github.com/danielgzd/Cloudflare-SpeedTest-BestIP) · 2026-11-15 · Python
+- [proxy-rules](https://github.com/danielgzd/proxy-rules) · 2026-11-15 · JavaScript
+- [a-share-swing-strategy-review-20261115](https://github.com/danielgzd/a-share-swing-strategy-review-20261115) · 2026-11-15 · —
 
 ---
 
-<sub>公开数据更新于 2026-11-15 14:50 UTC+8 · 每日自动整理 · MIT License</sub>
+<sub>公开数据更新于 2026-11-16 14:49 UTC+8 · 每日自动整理 · MIT License</sub>
 
 <sub>访客徽章来自第三方，记录图片请求次数，受缓存影响，并非独立访客数。私有项目仅发布项目名称、基本介绍与月度活动，源码保持私有。</sub>

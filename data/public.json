@@ -1,13 +1,27 @@
 {
-  "updated_at": "2026-11-15 14:50 UTC+8",
+  "updated_at": "2026-11-16 14:49 UTC+8",
   "profile": {
     "login": "danielgzd",
     "name": "daniel.gzd",
     "followers": 1,
     "following": 10,
-    "public_repos": 69
+    "public_repos": 70
   },
   "repositories": [
+    {
+      "name": "a-share-swing-strategy-review-20261115",
+      "html_url": "https://github.com/danielgzd/a-share-swing-strategy-review-20261115",
+      "description": "A股摆动策略验证结论：原版与局部修正指标、风险审计和对比图表（仅报告，无源码与原始数据）",
+      "fork": false,
+      "language": null,
+      "topics": [],
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "open_issues_count": 0,
+      "archived": false,
+      "pushed_at": "2026-11-15T09:12:33Z",
+      "created_at": "2026-11-15T09:12:25Z"
+    },
     {
       "name": "BaiduNetdiskPlugin-macOS",
       "html_url": "https://github.com/danielgzd/BaiduNetdiskPlugin-macOS",
@@ -131,7 +145,7 @@
       "forks_count": 0,
       "open_issues_count": 0,
       "archived": false,
-      "pushed_at": "2026-11-14T23:49:15Z",
+      "pushed_at": "2026-11-15T23:55:28Z",
       "created_at": "2026-02-15T14:52:24Z"
     },
     {
@@ -180,7 +194,7 @@
       "forks_count": 0,
       "open_issues_count": 0,
       "archived": false,
-      "pushed_at": "2026-11-14T06:44:21Z",
+      "pushed_at": "2026-11-15T06:50:04Z",
       "created_at": "2026-10-30T03:29:13Z"
     },
     {
@@ -194,7 +208,7 @@
       "forks_count": 0,
       "open_issues_count": 0,
       "archived": false,
-      "pushed_at": "2026-11-15T06:18:22Z",
+      "pushed_at": "2026-11-16T06:17:36Z",
       "created_at": "2024-05-27T12:40:53Z"
     },
     {
@@ -653,10 +667,10 @@
       "language": "JavaScript",
       "topics": [],
       "stargazers_count": 0,
-      "forks_count": 0,
+      "forks_count": 1,
       "open_issues_count": 0,
       "archived": false,
-      "pushed_at": "2026-11-15T05:33:12Z",
+      "pushed_at": "2026-11-16T05:32:01Z",
       "created_at": "2026-01-07T12:20:37Z"
     },
     {
@@ -733,7 +747,7 @@
       "forks_count": 0,
       "open_issues_count": 0,
       "archived": false,
-      "pushed_at": "2026-11-14T10:35:11Z",
+      "pushed_at": "2026-11-15T11:04:44Z",
       "created_at": "2026-06-15T15:17:15Z"
     },
     {
@@ -990,12 +1004,12 @@
     }
   ],
   "contributions": {
-    "totalCommitContributions": 704,
+    "totalCommitContributions": 707,
     "totalIssueContributions": 2,
     "totalPullRequestContributions": 1,
     "totalPullRequestReviewContributions": 0,
     "contributionCalendar": {
-      "totalContributions": 722,
+      "totalContributions": 726,
       "weeks": [
         {
           "contributionDays": [
@@ -2665,7 +2679,11 @@
           "contributionDays": [
             {
               "date": "2026-11-15",
-              "contributionCount": 17
+              "contributionCount": 20
+            },
+            {
+              "date": "2026-11-16",
+              "contributionCount": 1
             }
           ]
         }
@@ -2673,6 +2691,6 @@
     }
   },
   "contributions_status": "ok",
-  "contributions_updated_at": "2026-11-15 14:50 UTC+8",
+  "contributions_updated_at": "2026-11-16 14:49 UTC+8",
   "contributions_source": "public-actions"
 }

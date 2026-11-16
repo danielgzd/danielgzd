@@ -2,6 +2,17 @@
 
 私有项目的基本介绍与更新记录见 [非公开项目目录](PRIVATE_PROJECTS.md)。以下按用途分类，保留全部公开仓库。自有非 Fork 仅指仓库属性，不等同于独立原创认证。分类可在 `profile.json` 修正。
 
+## 其他探索
+
+| 项目 | 类型 | 主语言 | Star | 简介 |
+| --- | --- | --- | ---: | --- |
+| [a-share-swing-strategy-review-20261115](https://github.com/danielgzd/a-share-swing-strategy-review-20261115) | 自有 | — | 0 | A股摆动策略验证结论：原版与局部修正指标、风险审计和对比图表（仅报告，无源码与原始数据） |
+| [GNotion](https://github.com/danielgzd/GNotion) | 自有 | — | 0 | 暂无公开描述 |
+| [idea](https://github.com/danielgzd/idea) | 自有 | — | 0 | 暂无公开描述 |
+| [LocalMind](https://github.com/danielgzd/LocalMind) | 自有 | — | 0 | 暂无公开描述 |
+| [ddgksf2013](https://github.com/danielgzd/ddgksf2013) | Fork | — | 0 | 暂无公开描述 |
+| [sparkle](https://github.com/danielgzd/sparkle) | Fork | TypeScript | 0 | :electron: Another Mihomo GUI. (🛠building...) |
+
 ## Apple 生态与效率工具
 
 | 项目 | 类型 | 主语言 | Star | 简介 |
@@ -91,16 +102,6 @@
 | [github-chinese](https://github.com/danielgzd/github-chinese) | Fork | JavaScript | 0 | GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese) |
 | [paint-board](https://github.com/danielgzd/paint-board) | Fork | TypeScript | 0 | Canvas based drawing board, including free drawing, eraser, text, select, layer, undo, redo, clear, save, drag |
 | [ruoyi-vue-pro](https://github.com/danielgzd/ruoyi-vue-pro) | Fork | Java | 0 | 🔥 官方推荐 🔥 RuoYi-Vue 全新 Pro 版本，优化重构所有功能。基于 Spring Boot + MyBatis Plus + Vue &amp; Element 实现的后台管理系统 + 微信小程序，支持 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP 等功能。你的 ⭐️ Star ⭐️，是作者生发的动力！ |
-
-## 其他探索
-
-| 项目 | 类型 | 主语言 | Star | 简介 |
-| --- | --- | --- | ---: | --- |
-| [GNotion](https://github.com/danielgzd/GNotion) | 自有 | — | 0 | 暂无公开描述 |
-| [idea](https://github.com/danielgzd/idea) | 自有 | — | 0 | 暂无公开描述 |
-| [LocalMind](https://github.com/danielgzd/LocalMind) | 自有 | — | 0 | 暂无公开描述 |
-| [ddgksf2013](https://github.com/danielgzd/ddgksf2013) | Fork | — | 0 | 暂无公开描述 |
-| [sparkle](https://github.com/danielgzd/sparkle) | Fork | TypeScript | 0 | :electron: Another Mihomo GUI. (🛠building...) |
 
 ## 学习与知识收藏
 
