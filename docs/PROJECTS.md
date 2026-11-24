@@ -46,7 +46,7 @@
 | --- | --- | --- | ---: | --- |
 | [Cloudflare-SpeedTest-BestIP](https://github.com/danielgzd/Cloudflare-SpeedTest-BestIP) | 自有 | Python | 0 | Cloudflare IP 测速与优选工具。 |
 | [Cloudflare-SpeedTest-BestIP-For-iStoreOS](https://github.com/danielgzd/Cloudflare-SpeedTest-BestIP-For-iStoreOS) | 自有 | Python | 0 | 面向 iStoreOS 场景的 Cloudflare IP 优选项目。 |
-| [proxy-rules](https://github.com/danielgzd/proxy-rules) | 自有 | JavaScript | 3 | 整理跨客户端的网络分流规则与配置。 |
+| [proxy-rules](https://github.com/danielgzd/proxy-rules) | 自有 | JavaScript | 4 | 整理跨客户端的网络分流规则与配置。 |
 | [better-cloudflare-ip](https://github.com/danielgzd/better-cloudflare-ip) | Fork | C | 0 | 查找适合自己当前网络环境的优选cloudflare anycast IP |
 | [BPB-Worker-Panel](https://github.com/danielgzd/BPB-Worker-Panel) | Fork | JavaScript | 1 | A GUI Panel providing Worker subscriptions and Fragment settings and Warp configs, providing configs for cross-platform clients using (singbox-core and xray-core) |
 | [clash-verge](https://github.com/danielgzd/clash-verge) | Fork | — | 0 | A Clash GUI based on tauri. Supports Windows, macOS and Linux. |
